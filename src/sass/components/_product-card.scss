@@ -39,13 +39,14 @@
 
     &__name {
         margin-bottom: 10px;
-        color: $second_text_color;
+        // color: $second_text_color;
         font-size: 1.25rem;
-        font-weight: normal;
+        font-weight: 600;
+
     }
 
     &__price {
-        color: $btn-main-color;
+       
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 10px;

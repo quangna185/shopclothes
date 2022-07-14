@@ -10,6 +10,7 @@ import productData from '../assets/fake-data/products'
 import ProductCard from '../components/ProductCard'
 import Grid from '../components/Grid'
 import products from '../assets/fake-data/products'
+import banner from '../assets/images/banner.png'
 
 const Home = () => {
     return (
@@ -58,7 +59,7 @@ const Home = () => {
                                 <ProductCard
                                      img01={item.image01}
                                      img02={item.image02}
-                                     name={item.name}
+                                     name={item.title}
                                      price={item.price}
                                      slug={item.slug}
                                 />
@@ -79,7 +80,52 @@ const Home = () => {
                     </Grid>
                 </SectionBody>
             </Section>
-        
+            
+            <Section>
+                <SectionTitle>
+                    Sản phẩm mới
+                </SectionTitle>
+                <SectionBody>
+                    <Grid
+                        col={4}
+                        mdCol={2}
+                        smCol={1}
+                        gap={20}
+                    >
+                        {
+                            products.map((item, index) => <Link key={index} to="/products">
+                                <ProductCard
+                                     img01={item.image01}
+                                     img02={item.image02}
+                                     name={item.title}
+                                     price={item.price}
+                                     slug={item.slug}
+                                />
+                            </Link>)
+                        }
+                        {/* {
+                            productData.getProducts(4).map((item, index) => (
+                                <ProductCard
+                                    key={index}
+                                    img01={item.image01}
+                                    img02={item.image02}
+                                    name={item.name}
+                                    price={item.price}
+                                    slug={item.slug}
+                                />
+                            ))
+                        } */}
+                    </Grid>
+                </SectionBody>
+            </Section>
+
+            <Section>
+                <SectionBody>
+                    <Link to="/catalog">
+                        <img src={banner} alt="" />
+                    </Link>
+                </SectionBody>
+            </Section>
         </Helmet>
     )
 }

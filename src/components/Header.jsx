@@ -27,10 +27,10 @@ export const Header = () => {
     // findIndex : ktra true/false dn luc tra ve gia tri true 
     const activeNav = mainNav.findIndex(e => e.path === pathname)
     //useRef hook là một function trả về một object với thuộc tính current được khởi tạo thông qua tham số truyền vào
-    //Ref có thể được sử dụng để truy cập đến DOM node hoặc React element
+    //Ref có thể được sử dụng để truy cập đến DOM node hoặc React element 
     // khoi tao la null
     const headerRef = useRef(null)
-    // useEffect hook la
+    // useEffect hook la 
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -45,12 +45,14 @@ export const Header = () => {
     }, []);
 
     const menuLeft = useRef(null)
+    // c1 : toggle : chuyển đổi 
     const menuToggle = () => menuLeft.current.classList.toggle('active')
-
+    //c2 : if else : remove và add
   return (
     <div className="header" ref={headerRef}>
         <div className="container">
             <div className="header__logo">
+                
                 <Link to="/">
                     <img src={logo} alt="" />
                 </Link>

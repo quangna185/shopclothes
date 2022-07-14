@@ -1,12 +1,12 @@
 .header {
     background-color: $main-bg;
-    position: fixed;
+    position: fixed;       
     top: 0;
     left: 0;
     width: 100%;
     z-index: 99;
     height: $header-height;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease;            // tạo hiêu ứng khi chuột 
 
     @include tablet {
         height: 70px;
